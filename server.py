@@ -7,7 +7,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         self.send_response(HTTPStatus.OK)
         self.end_headers()
-        self.wfile.write(b'Hello new world')
+        self.wfile.write(b'Hello world')
 
 
 print("Serving on port 8000")
