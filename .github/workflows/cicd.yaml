@@ -1,7 +1,6 @@
-on:
-  push:
+on: push:
 jobs:
-  docker:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
       -
@@ -18,4 +17,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: git-actions-test/server:latest
+          tags: amh9412/git-actions-test:latest
