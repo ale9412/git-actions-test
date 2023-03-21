@@ -21,6 +21,8 @@ jobs:
 #          tags: amh9412/git-actions-test:latest
       - name: Output working directory
         run: pwd
+      - name: Output folder content
+        run: ls -la
       - name: deploy to cluster
         uses: ghostzero/kubectl@v1
         env:
