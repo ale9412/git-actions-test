@@ -20,7 +20,7 @@ jobs:
 #          push: true
 #          tags: amh9412/git-actions-test:latest
       - name: Output working directory
-        run: "echo pwd"
+        run: pwd
       - name: deploy to cluster
         uses: ghostzero/kubectl@v1
         env:
