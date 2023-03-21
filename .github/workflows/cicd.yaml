@@ -23,7 +23,7 @@ jobs:
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          args: apply -f /home/ubuntu/git-actions-test/my_app.yaml
+          args: apply -f /home/mw/git-actions-test/my_app.yaml
       - name: verify deployment
         uses: ghostzero/kubectl@v1
         env:
