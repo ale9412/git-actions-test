@@ -1,7 +1,7 @@
 on: push
 jobs:
   build-and-push:
-    runs-on: self-hosted
+    runs-on: ubuntu
     steps:
       - uses: actions/checkout@master
       -
@@ -19,16 +19,16 @@ jobs:
         with:
           push: true
           tags: amh9412/git-actions-test:latest
-      - name: deploy to cluster
-        uses: ghostzero/kubectl@v1
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        with:
-          args: apply -f my_app.yaml
-      - name: verify deployment
-        uses: ghostzero/kubectl@v1
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-#          KUBECTL_VERSION: "1.23"
-        with:
-          args: rollout status deployment/my-app
+#      - name: deploy to cluster
+#        uses: ghostzero/kubectl@v1
+#        env:
+#          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+#        with:
+#          args: apply -f my_app.yaml
+#      - name: verify deployment
+#        uses: ghostzero/kubectl@v1
+#        env:
+#          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+##          KUBECTL_VERSION: "1.23"
+#        with:
+#          args: rollout status deployment/my-app
